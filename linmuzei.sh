@@ -127,6 +127,8 @@ function setWallpaperLinux(){
   then
     echo "Gnome-settings-daemons detected, setting wallpaper with gsettings..."
     gsettings set org.gnome.desktop.background picture-uri file://$muzeiDir/Wallpaper/$imageFile
+    #Next line will change the background of the lockscreen as well
+    gsettings set org.gnome.desktop.screensaver picture-uri file://$muzeiDir/Wallpaper/$imageFile
   else
     if [ -f ~/.xinitrc ]
     then
